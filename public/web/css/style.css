@@ -1,0 +1,92 @@
+body {
+    font-family: 'Mulish', sans-serif !important;
+}
+.header {
+    background-color: #F4785D;
+    color: aliceblue;
+    min-height: 80px;
+    padding: .5rem;
+}
+.header .btn.btn.btn-primary {
+    margin-left: 100px;
+    background-color: #F4785D;
+    border-width: 1px;
+}
+.navbar-brand {
+    font-size: 1.75rem !important;
+}
+.navbar-brand, .nav-link{
+    color: #fff;
+}
+.navbar-brand:hover, .nav-link:hover{
+    color: rgb(233, 222, 222);
+}
+.navbar-toggler {
+    border-color: #fff !important;
+}
+.login_fluid {
+    background-color: #eee;
+}
+.account_section {
+    background-color: #fff;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding:  40px 50px;
+    box-shadow: 0px 10px 20px rgb(255 64 59 / 9%);
+    border-radius: 0px;
+}
+h4.headding {
+    font-weight: 800;
+}
+.account_section .login_inner .form-control {
+    text-align: center;
+    border-radius: 4px;
+}
+.form-group .form-control {
+    border: 1px solid #c4c4c4;
+    border-radius: 0;
+    height: 55px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.account_section .login_inner .btn {
+    border-radius: 4px;
+    min-height: 55px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.btn.btn-primary {
+    background-color: #F4785D;
+    color: #fff;
+    border-color: #ED6244;
+    border-radius: 10px;
+    border-width: 2px;
+}
+.btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active {
+    background-color: #F4785D!important;
+    border-color: #ED6244 !important;
+    box-shadow: none;
+}
+.account_section .login_inner .btn:focus {
+    box-shadow: 0px 0px 0px 3px rgb(255 64 59 / 20%) !important;
+}
+.radios {
+    margin-bottom: 10px;
+}
+p.card-text {
+    font-size: 12px;
+    margin-bottom: .5rem;
+}
+.root-card {
+    text-align: center;
+    border-radius: 50% !important;
+    margin: auto;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.btn-add {
+    text-align: end;
+    margin-bottom: 1rem;
+    color: #fff;
+}
