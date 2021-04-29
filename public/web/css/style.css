@@ -73,9 +73,17 @@ h4.headding {
 .radios {
     margin-bottom: 10px;
 }
+.chains a:hover {
+    text-decoration: none;
+}
 p.card-text {
     font-size: 12px;
     margin-bottom: .5rem;
+    text-decoration: none;
+    color: black;
+}
+p.card-text:hover {
+    text-decoration: none;
 }
 .root-card {
     text-align: center;

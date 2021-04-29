@@ -1,106 +1,118 @@
 <%- include('./shared/head-panel.ejs')%>
-<div class="chains pt-5">
+<div class="chains pt-5 pb-5">
     <div class="container">
         <div class="btn-add">
-            <a href="<%=app_url%>/register?id=123" class="btn btn-primary">Add</a>
+            <a href="<%=app_url%>/register" class="btn btn-primary">Add</a>
         </div>
         <div class="card p-5">
             <div class="card-body">
                 <% if (user1) { %>
-                    <a href="<%=app_url%>/?id=<%=user1._id%>">
-                        <div class="card root-card" style="width: 12rem;">
+                    <div class="card root-card" style="width: 12rem;">
+                        <a href="<%=app_url%>/?id=<%=user1._id%>">
                             <div class="card-body">
-                              <p class="card-text"><%=user1.name%></p>
-                              <p class="card-text"><%=user1.email%></p>
-                              <p class="card-text">Referel Point: <%=user1.referncePoint%></p>
-                              <p class="card-text">Matching Point: <%=user1.matchingPoint%></p>
-                              <p class="card-text">Referel Code: <%=user1.referelCode%></p>
+                                <p class="card-text"><%=user1.name%></p>
+                                <p class="card-text"><%=user1.email%></p>
+                                <p class="card-text">Referel Point: <%=user1.referncePoint%></p>
+                                <p class="card-text">Matching Point: <%=user1.matchingPoint%></p>
+                                <p class="card-text">Referel Code: <%=user1.referelCode%></p>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 <% } %>
                 <div class="child">
                     <div class="row">
                         <div class="col-6">
-                            <% if (user2) { %>
-                            <div class="card root-card" style="width: 12rem;">
-                                <div class="card-body">
-                                    <p class="card-text"><%=user2.name%></p>
-                                    <p class="card-text"><%=user2.email%></p>
-                                    <p class="card-text">Referel Point: <%=user2.referncePoint%></p>
-                                    <p class="card-text">Matching Point: <%=user2.matchingPoint%></p>
-                                    <p class="card-text">Referel Code: <%=user2.referelCode%></p>
+                            <% if (user1.leftChild) { %>
+                                <div class="card root-card" style="width: 12rem;">
+                                    <a href="<%=app_url%>/?id=<%=user1.leftChild._id%>">
+                                        <div class="card-body">
+                                            <p class="card-text"><%=user1.leftChild.name%></p>
+                                            <p class="card-text"><%=user1.leftChild.email%></p>
+                                            <p class="card-text">Referel Point: <%=user1.leftChild.referncePoint%></p>
+                                            <p class="card-text">Matching Point: <%=user1.leftChild.matchingPoint%></p>
+                                            <p class="card-text">Referel Code: <%=user1.leftChild.referelCode%></p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
                             <% } %>
                             <div class="children">
                                 <div class="row">
                                     <div class="col-6">
-                                        <% if (user4) { %>
-                                        <div class="card root-card" style="width: 12rem;">
-                                            <div class="card-body">
-                                                <p class="card-text"><%=user4.name%></p>
-                                                <p class="card-text"><%=user4.email%></p>
-                                                <p class="card-text">Referel Point: <%=user4.referncePoint%></p>
-                                                <p class="card-text">Matching Point: <%=user4.matchingPoint%></p>
-                                                <p class="card-text">Referel Code: <%=user4.referelCode%></p>
+                                        <% if (user2.leftChild) { %>
+                                            <div class="card root-card" style="width: 12rem;">
+                                                <a href="<%=app_url%>/?id=<%=user2.leftChild._id%>">
+                                                    <div class="card-body">
+                                                        <p class="card-text"><%=user2.leftChild.name%></p>
+                                                        <p class="card-text"><%=user2.leftChild.email%></p>
+                                                        <p class="card-text">Referel Point: <%=user2.leftChild.referncePoint%></p>
+                                                        <p class="card-text">Matching Point: <%=user2.leftChild.matchingPoint%></p>
+                                                        <p class="card-text">Referel Code: <%=user2.leftChild.referelCode%></p>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </div>
                                         <% } %>
                                     </div>
                                     <div class="col-6">
-                                        <% if (user5) { %>
-                                        <div class="card root-card" style="width: 12rem;">
-                                            <div class="card-body">
-                                                <p class="card-text"><%=user5.name%></p>
-                                                <p class="card-text"><%=user5.email%></p>
-                                                <p class="card-text">Referel Point: <%=user5.referncePoint%></p>
-                                                <p class="card-text">Matching Point: <%=user5.matchingPoint%></p>
-                                                <p class="card-text">Referel Code: <%=user5.referelCode%></p>
+                                        <% if (user2.rightChild) { %>
+                                            <div class="card root-card" style="width: 12rem;">
+                                                <a href="<%=app_url%>/?id=<%=user2.rightChild._id%>">
+                                                    <div class="card-body">
+                                                        <p class="card-text"><%=user2.rightChild.name%></p>
+                                                        <p class="card-text"><%=user2.rightChild.email%></p>
+                                                        <p class="card-text">Referel Point: <%=user2.rightChild.referncePoint%></p>
+                                                        <p class="card-text">Matching Point: <%=user2.rightChild.matchingPoint%></p>
+                                                        <p class="card-text">Referel Code: <%=user2.rightChild.referelCode%></p>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </div>
                                         <% } %>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <% if (user3) { %>
-                            <div class="card root-card" style="width: 12rem;">
-                                <div class="card-body">
-                                    <p class="card-text"><%=user3.name%></p>
-                                    <p class="card-text"><%=user3.email%></p>
-                                    <p class="card-text">Referel Point: <%=user3.referncePoint%></p>
-                                    <p class="card-text">Matching Point: <%=user3.matchingPoint%></p>
-                                    <p class="card-text">Referel Code: <%=user3.referelCode%></p>
+                            <% if (user1.rightChild) { %>
+                                <div class="card root-card" style="width: 12rem;">
+                                    <a href="<%=app_url%>/?id=<%=user1.rightChild._id%>">
+                                        <div class="card-body">
+                                            <p class="card-text"><%=user1.rightChild.name%></p>
+                                            <p class="card-text"><%=user1.rightChild.email%></p>
+                                            <p class="card-text">Referel Point: <%=user1.rightChild.referncePoint%></p>
+                                            <p class="card-text">Matching Point: <%=user1.rightChild.matchingPoint%></p>
+                                            <p class="card-text">Referel Code: <%=user1.rightChild.referelCode%></p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
                             <% } %>
                             <div class="children">
                                 <div class="row">
                                     <div class="col-6">
-                                        <% if (user6) { %>
-                                        <div class="card root-card" style="width: 12rem;">
-                                            <div class="card-body">
-                                                <p class="card-text"><%=user6.name%></p>
-                                                <p class="card-text"><%=user6.email%></p>
-                                                <p class="card-text">Referel Point: <%=user6.referncePoint%></p>
-                                                <p class="card-text">Matching Point: <%=user6.matchingPoint%></p>
-                                                <p class="card-text">Referel Code: <%=user6.referelCode%></p>
+                                        <% if (user3.leftChild) { %>
+                                            <div class="card root-card" style="width: 12rem;">
+                                                <a href="<%=app_url%>/?id=<%=user3.leftChild._id%>">
+                                                    <div class="card-body">
+                                                        <p class="card-text"><%=user3.leftChild.name%></p>
+                                                        <p class="card-text"><%=user3.leftChild.email%></p>
+                                                        <p class="card-text">Referel Point: <%=user3.leftChild.referncePoint%></p>
+                                                        <p class="card-text">Matching Point: <%=user3.leftChild.matchingPoint%></p>
+                                                        <p class="card-text">Referel Code: <%=user3.leftChild.referelCode%></p>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </div>
                                         <% } %>
                                     </div>
                                     <div class="col-6">
-                                        <% if (user7) { %>
+                                        <% if (user3.rightChild) { %>
                                             <div class="card root-card" style="width: 12rem;">
-                                                <div class="card-body">
-                                                    <p class="card-text"><%=user7.name%></p>
-                                                    <p class="card-text"><%=user7.email%></p>
-                                                    <p class="card-text">Referel Point: <%=user7.referncePoint%></p>
-                                                    <p class="card-text">Matching Point: <%=user7.matchingPoint%></p>
-                                                    <p class="card-text">Referel Code: <%=user7.referelCode%></p>
-                                                </div>
+                                                <a href="<%=app_url%>/?id=<%=user3.rightChild._id%>">
+                                                    <div class="card-body">
+                                                        <p class="card-text"><%=user3.rightChild.name%></p>
+                                                        <p class="card-text"><%=user3.rightChild.email%></p>
+                                                        <p class="card-text">Referel Point: <%=user3.rightChild.referncePoint%></p>
+                                                        <p class="card-text">Matching Point: <%=user3.rightChild.matchingPoint%></p>
+                                                        <p class="card-text">Referel Code: <%=user3.rightChild.referelCode%></p>
+                                                    </div>
+                                                </a>
                                             </div>
                                         <% } %>
                                     </div>

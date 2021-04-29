@@ -25,7 +25,7 @@
                                 <label class="form-check-label" for="inlineRadio1">Left</label>
                               </div>
                               <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="child" id="inlineRadio2" value="option2">
+                                <input class="form-check-input" type="radio" name="child" id="inlineRadio2" value="right">
                                 <label class="form-check-label" for="inlineRadio2">Right</label>
                               </div>
                         </div>
@@ -37,6 +37,7 @@
     </div>
 </div>
 
+<%-include('./shared/script.ejs')%>
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script>
 
@@ -83,7 +84,7 @@
             submitHandler: function (form) {
                 $('.submitBtn').prop('disabled', true)
                 $.ajax({
-                    url: "<%=app_url%>/register",
+                    url: "<%=app_url%>/addregister",
                     data: $(form).serialize(),
                     type: "POST",
                     dataType: "json",
@@ -92,7 +93,8 @@
                             status,
                             message,
                             errors,
-                            mobile
+                            mobile,
+                            referel
                         } = data;
                         errors = typeof errors != 'undefined' ? errors : []
                         message = typeof message != 'undefined' ? message : null
@@ -100,7 +102,7 @@
                         if (status == true) {
                             toastr["success"](message);
                             setTimeout(function () {
-                                window.location.href = '<%=app_url%>/home'
+                                window.location.href = '<%=app_url%>/?id='+referel
                                 $('.submitBtn').prop('disabled', false)
                             }, 1000)
                         } else {

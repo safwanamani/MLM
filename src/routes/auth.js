@@ -10,7 +10,7 @@ router.use((req,res, next) => {
     next();
 });
 
-router.post("/register",userController.addRegister)
+router.post("/addregister",userController.addRegister)
 router.get("/register", userController.register)
 router.get("/", userController.home)
 router.get("/getusers", userController.getUsers)

@@ -11,6 +11,7 @@ exports.register = async(req, res)=>{
 
 exports.addRegister = async(req,res)=>{
     try {
+        console.log(req.body);
         //Checking user already exist or not
         var userCode = referralCodeGenerator.alphaNumeric('lowercase',2,2)
         console.log("userCode  "+userCode)
@@ -23,7 +24,6 @@ exports.addRegister = async(req,res)=>{
             let {name, email, phone} = req.body
 
             let _user = new User({name, email, phone})
-
 
             _user.save().then(() => {
                 if (referalUser) {
@@ -126,11 +126,12 @@ exports.addRegister = async(req,res)=>{
 
                         _user.save()
                             .then(
-                                res.send("New User Created")
+                                console.log("New User Created")
                             )
                             .catch(err => {
                                 res.send(err)
-                            }) 
+                            })
+                            
                     }
             }
 
@@ -168,60 +169,52 @@ exports.addRegister = async(req,res)=>{
 
                     _user.save()
                         .then(
-                            res.send("New User Created")
+                            console.log("New User Created")
                         )
                         .catch(err => {
                             res.send(err)
                         }) 
                 }
             }
+
+            return res.json({
+                status: true,
+                referel: referalUser._id
+            })
     
         } else {
             console.log("User already exist");
         }
     }
-    catch{
-        throw err
+    catch(error) { 
+        console.log(error);
     }
 }
 
 exports.home = async(req, res) => {
-    console.log(req.query.id)
-    let users = await User.find()
+    let user1 = ""
+    if (req.query.id) {
+        user1 = await User.findOne({_id: req.query.id}).populate('leftChild').populate('rightChild')
+    } else {
+        let users = await User.find()
+        user1 = await User.findOne({_id: users[0]}).populate('leftChild').populate('rightChild')
+    }
     let user2 = ""
     let user3 = ""
-    let user4 = ""
-    let user5 = ""
-    let user6 = ""
-    let user7 = ""
 
-    if (users[0].leftChild || users[0].rightChild) {
-        user2 = await (await User.findOne({_id: users[0].leftChild})).populate('leftChild')
-        user3 = await User.findOne({_id: users[0].rightChild})
+    if (user1.leftChild) {
+        user2 = await User.findOne({_id: user1.leftChild._id}).populate('leftChild').populate('rightChild')
+    }
 
-        console.log(user2);
-
-        if (user2.leftChild || user2.rightChild) {
-            user4 = await User.findOne({_id: user2.leftChild})
-            user5 = await User.findOne({_id: user2.rightChild})
-        }
-
-        if (user3.leftChild || user3.rightChild) {
-            user6 = await User.findOne({_id: user3.leftChild})
-            user7 = await User.findOne({_id: user3.rightChild})
-        }
-
+    if (user1.rightChild) {
+        user3 = await User.findOne({_id: user1.rightChild._id}).populate('leftChild').populate('rightChild')
     }
 
 
     res.render('home', {
-        user1: users[0],
+        user1: user1,
         user2: user2,
-        user3: user3,
-        user4: user4,
-        user5: user5,
-        user6: user6,
-        user7: user7
+        user3: user3
     })
 }
 
