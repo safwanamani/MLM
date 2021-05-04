@@ -84,7 +84,7 @@
             submitHandler: function (form) {
                 $('.submitBtn').prop('disabled', true)
                 $.ajax({
-                    url: "<%=app_url%>/addregister",
+                    url: "/addregister",
                     data: $(form).serialize(),
                     type: "POST",
                     dataType: "json",
@@ -102,7 +102,7 @@
                         if (status == true) {
                             toastr["success"](message);
                             setTimeout(function () {
-                                window.location.href = '<%=app_url%>/?id='+referel
+                                window.location.href = '/?id='+referel
                                 $('.submitBtn').prop('disabled', false)
                             }, 1000)
                         } else {

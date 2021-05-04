@@ -2,13 +2,13 @@
 <div class="chains pt-5 pb-5">
     <div class="container">
         <div class="btn-add">
-            <a href="<%=app_url%>/register" class="btn btn-primary">Add</a>
+            <a href="/register" class="btn btn-primary">Add</a>
         </div>
         <div class="card p-5">
             <div class="card-body">
                 <% if (user1) { %>
                     <div class="card root-card" style="width: 12rem;">
-                        <a href="<%=app_url%>/?id=<%=user1._id%>">
+                        <a href="/?id=<%=user1._id%>">
                             <div class="card-body">
                                 <p class="card-text"><%=user1.name%></p>
                                 <p class="card-text"><%=user1.email%></p>
@@ -24,7 +24,7 @@
                         <div class="col-6">
                             <% if (user1.leftChild) { %>
                                 <div class="card root-card" style="width: 12rem;">
-                                    <a href="<%=app_url%>/?id=<%=user1.leftChild._id%>">
+                                    <a href="/?id=<%=user1.leftChild._id%>">
                                         <div class="card-body">
                                             <p class="card-text"><%=user1.leftChild.name%></p>
                                             <p class="card-text"><%=user1.leftChild.email%></p>
@@ -40,7 +40,7 @@
                                     <div class="col-6">
                                         <% if (user2.leftChild) { %>
                                             <div class="card root-card" style="width: 12rem;">
-                                                <a href="<%=app_url%>/?id=<%=user2.leftChild._id%>">
+                                                <a href="/?id=<%=user2.leftChild._id%>">
                                                     <div class="card-body">
                                                         <p class="card-text"><%=user2.leftChild.name%></p>
                                                         <p class="card-text"><%=user2.leftChild.email%></p>
@@ -55,7 +55,7 @@
                                     <div class="col-6">
                                         <% if (user2.rightChild) { %>
                                             <div class="card root-card" style="width: 12rem;">
-                                                <a href="<%=app_url%>/?id=<%=user2.rightChild._id%>">
+                                                <a href="/?id=<%=user2.rightChild._id%>">
                                                     <div class="card-body">
                                                         <p class="card-text"><%=user2.rightChild.name%></p>
                                                         <p class="card-text"><%=user2.rightChild.email%></p>
@@ -73,7 +73,7 @@
                         <div class="col-6">
                             <% if (user1.rightChild) { %>
                                 <div class="card root-card" style="width: 12rem;">
-                                    <a href="<%=app_url%>/?id=<%=user1.rightChild._id%>">
+                                    <a href="/?id=<%=user1.rightChild._id%>">
                                         <div class="card-body">
                                             <p class="card-text"><%=user1.rightChild.name%></p>
                                             <p class="card-text"><%=user1.rightChild.email%></p>
@@ -89,7 +89,7 @@
                                     <div class="col-6">
                                         <% if (user3.leftChild) { %>
                                             <div class="card root-card" style="width: 12rem;">
-                                                <a href="<%=app_url%>/?id=<%=user3.leftChild._id%>">
+                                                <a href="/?id=<%=user3.leftChild._id%>">
                                                     <div class="card-body">
                                                         <p class="card-text"><%=user3.leftChild.name%></p>
                                                         <p class="card-text"><%=user3.leftChild.email%></p>
@@ -104,7 +104,7 @@
                                     <div class="col-6">
                                         <% if (user3.rightChild) { %>
                                             <div class="card root-card" style="width: 12rem;">
-                                                <a href="<%=app_url%>/?id=<%=user3.rightChild._id%>">
+                                                <a href="/?id=<%=user3.rightChild._id%>">
                                                     <div class="card-body">
                                                         <p class="card-text"><%=user3.rightChild.name%></p>
                                                         <p class="card-text"><%=user3.rightChild.email%></p>
