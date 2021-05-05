@@ -100,14 +100,18 @@
                         message = typeof message != 'undefined' ? message : null
     
                         if (status == true) {
-                            toastr["success"](message);
                             setTimeout(function () {
                                 window.location.href = '/?id='+referel
                                 $('.submitBtn').prop('disabled', false)
                             }, 1000)
                         } else {
-                            $('.submitBtn').prop('disabled', false)
+                            if (errors.length > 0) {
+                                toastr["error"](errors[0]);
+                            } else if (message) {
+                                toastr["error"](message);
+                            }
                         }
+                        $('.submitBtn').prop('disabled', false)
                     },
                     error: function (error) {
                         $('.submitBtn').prop('disabled', false)
